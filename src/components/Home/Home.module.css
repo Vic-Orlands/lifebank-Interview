@@ -1,0 +1,60 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap'); */
+
+@import url("//db.onlinewebfonts.com/c/83a7d547ff8d0e5cdecd27ac7c30bdc8?family=Boing");
+
+:root {
+	--header1: 2.5rem;
+	--subheading: 1.2rem;
+	--header2: 1.6rem;
+	--paragraph: 1rem;
+
+	/* ----color variables----- */
+	--primaryBg: rgb(228, 228, 228);
+	--secondaryBg: rgb(255, 255, 255);
+	--thirdBg: rgb(4, 17, 22);
+	--primaryColor: rgb(1, 27, 51);
+	--secondaryColor: #ffffff;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* font-family: "Boing"; */
+}
+
+.home-container {
+	background-color: var(--secondaryBg);
+	color: var(--primaryColor);
+	font-size: 15px;
+	padding: 40px 200px;
+}
+
+.home-header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 3px solid var(--primaryColor);
+}
+
+.home-header-container aside h5 {
+	font-size: 1rem;
+	font-weight: bold;
+	background: transparent;
+	border: 2px solid rgb(1, 27, 51);
+	color: rgb(1, 27, 51);
+	margin-bottom: 10px;
+	padding: 9px 20px;
+	cursor: pointer;
+	transform: scale(1);
+}
+
+.home-header-container aside h5:hover {
+	background: rgb(1, 27, 51);
+	color: #ffffff;
+}
+
+.home-header-container aside h5:active {
+	transform: scale(0.95);
+	animation: transform 250ms linear;
+}

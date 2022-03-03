@@ -1,0 +1,74 @@
+.add-modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #0000005b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-modal-container {
+	position: relative;
+	background: rgb(255, 255, 255);
+	padding: 50px;
+	font-size: 20px;
+	width: 30%;
+}
+
+.add-modal-container h5 {
+	font-size: 1.5rem;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.add-modal-container hr {
+	margin: 10px 0;
+}
+
+.add-modal-container label,
+.add-modal-container label input {
+	display: block;
+}
+
+.add-modal-container label {
+	margin-bottom: 25px;
+}
+
+.add-modal-container label input {
+	width: 95%;
+	padding: 5px 10px;
+	height: 4vh;
+}
+
+.button-group {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.button-group button {
+	padding: 10px 20px;
+	font-size: .9rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.button-group button:nth-child(1) {
+	margin-right: 10px;
+	border: 2px solid red;
+	color: red;
+}
+
+.button-group button:nth-child(1):hover {
+	background: red;
+	color: #ffffff;
+}
+
+.button-group button:nth-child(2) {
+	border: 2px solid green;
+	background: green;
+	color: #ffffff;
+}

@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "learn json-server",
+      "body": "Mrinmay Mukherjee",
+      "author": "Dwight Shrute"
+    },
+    {
+      "id": 2,
+      "title": "Qui Est Esse",
+      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+      "author": "Dwight Shrute"
+    },
+    {
+      "id": 3,
+      "title": " Ea Molestias Quasi Exercitationem Repellat Qui Ipsa Sit Aut",
+      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+      "author": "Dwight Shrute"
+    },
+    {
+      "id": 4,
+      "title": " Eum Et Est Occaecati",
+      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+      "author": "Dwight Shrute"
+    },
+    {
+      "id": 5,
+      "title": "Nesciunt Quas Odio",
+      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+      "author": "Dwight Shrute"
+    },
+    {
+      "id": "6",
+      "title": "Testing Live Server",
+      "body": "Live server body...must work this time"
+    },
+    {
+      "id": "CE6or-DduHrj6tlrO5_4n",
+      "title": "Another Random Title",
+      "body": "Testing again Testing again Testing again Testing again Testing again Testing again Testing again Testing again Testing again"
+    },
+    {
+      "id": "4PMFvXi99InXvVKlqOMDo",
+      "title": "Beloved Redux",
+      "body": "Posting now is fun!!!!"
+    },
+    {
+      "id": "ec2c5RUzaztwf7DcFcz1k",
+      "title": "Freshman",
+      "body": "Freshman is a prince of bel air"
+    }
+  ]
+}
