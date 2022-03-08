@@ -17,16 +17,16 @@ export const addPost = (postObj) => async (dispatch) => {
 	});
 };
 
-export const editPost = (id) => async (dispatch) => {
-	const response = await axiosInstance.put(`posts/:${id}`);
+export const editPost = (postObj, id) => async (dispatch) => {
+	const response = await axiosInstance.put(`posts/${id}`, postObj);
 	dispatch({
 		type: actionTypes.EDIT_POST,
-		payload: response.data
+		payload: response
 	});
 };
 
 export const deletePost = (id) => async (dispatch) => {
-	const response = await axiosInstance.delete(`posts/:${id}`);
+	const response = await axiosInstance.delete(`posts/${id}`);
 	dispatch({
 		type: actionTypes.DELETE_POST,
 		payload: response.data

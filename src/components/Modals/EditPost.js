@@ -35,7 +35,9 @@ const EditPost = ({ isOpen, onClose, posts, editPost }) => {
 		validate,
 		onSubmit: (values) => {
 			editPost(values);
-			// location.reload();
+			setTimeout(() => {
+				window.location.reload();
+			}, 1000);
 		}
 	});
 
@@ -44,9 +46,8 @@ const EditPost = ({ isOpen, onClose, posts, editPost }) => {
 		return null;
 	} else {
 		const currentPost = posts.posts.filter((post) => post.id === isOpen.id);
-		const getPostValues = Object.values(currentPost);
-		const postTitle = getPostValues[0].title;
-		const postBody = getPostValues[0].body;
+		const postTitle = currentPost[0].title;
+		const postBody = currentPost[0].body;
 
 		// ---------------handle function to close modal--------------
 		const closeModal = (e) => {
@@ -64,26 +65,16 @@ const EditPost = ({ isOpen, onClose, posts, editPost }) => {
 					<form onSubmit={formik.handleSubmit} className={classes['form']}>
 						<label htmlFor="title">
 							Post Title
-							<input
-								type="text"
-								name="title"
-								value={postTitle ? postTitle : formik.values.title}
-								onChange={formik.handleChange}
-							/>
-							{formik.errors.title ? (
+							<input type="text" name="title" defaultValue={postTitle} onChange={formik.handleChange} />
+							{formik.errors.title === null ? (
 								<div style={{ color: 'red', fontSize: 15 }}>{formik.errors.title}</div>
 							) : null}
 						</label>
 
 						<label htmlFor="body">
 							Post body
-							<input
-								type="text"
-								name="body"
-								value={postBody ? postBody : formik.values.body}
-								onChange={formik.handleChange}
-							/>
-							{formik.errors.body ? (
+							<input type="text" name="body" defaultValue={postBody} onChange={formik.handleChange} />
+							{formik.errors.body === null ? (
 								<div style={{ color: 'red', fontSize: 15 }}>{formik.errors.body}</div>
 							) : null}
 						</label>
@@ -109,4 +100,10 @@ const mapStateToProps = ({ posts }) => {
 	};
 };
 
-export default connect(mapStateToProps, { editPost })(EditPost);
+const mapDispatchToProps = (dispatch, props) => {
+	return {
+		editPost: (values) => dispatch(editPost(values, props.isOpen.id))
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditPost);

@@ -34,7 +34,9 @@ const AddPost = ({ onclose, open, addPost }) => {
 		validate,
 		onSubmit: (values) => {
 			addPost(values);
-			window.location.reload();
+			setTimeout(() => {
+				window.location.reload();
+			}, 2000);
 		}
 	});
 

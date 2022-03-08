@@ -3,10 +3,11 @@ import classes from './Posts.module.css';
 import EditPost from '../Modals/EditPost';
 
 // --------import state and fetch action from redux--------
-import { connect } from 'react-redux';
-import { fetchPosts } from '../../redux/actions/postsActions';
+import { connect, useDispatch } from 'react-redux';
+import { fetchPosts, deletePost } from '../../redux/actions/postsActions';
 
 const Posts = ({ posts, fetchPosts }) => {
+	const dispatch = useDispatch();
 	const [ edit, setEdit ] = useState(false);
 
 	useEffect(() => {
@@ -16,6 +17,13 @@ const Posts = ({ posts, fetchPosts }) => {
 	const openEditModal = (e) => {
 		e.preventDefault();
 		setEdit(!edit);
+	};
+
+	const handleDeletePost = (id) => {
+		dispatch(deletePost(id));
+		setTimeout(() => {
+			window.location.reload();
+		}, 1000);
 	};
 
 	return (
@@ -39,7 +47,9 @@ const Posts = ({ posts, fetchPosts }) => {
 						>
 							Edit Post
 						</button>
-						<button className={classes['post-button-delete']}>Delete Post</button>
+						<button className={classes['post-button-delete']} onClick={() => handleDeletePost(post.id)}>
+							Delete Post
+						</button>
 					</section>
 				))}
 
