@@ -1,74 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Pagination from '../../utils/pagination/Pagination';
 import classes from './Posts.module.css';
-import EditPost from '../Modals/EditPost';
 
-// --------import state and fetch action from redux--------
-import { connect, useDispatch } from 'react-redux';
-import { fetchPosts, deletePost } from '../../redux/actions/postsActions';
+import useFetch from '../../api/useFetch';
 
-const Posts = ({ posts, fetchPosts }) => {
-	const dispatch = useDispatch();
-	const [ edit, setEdit ] = useState(false);
+const Posts = () => {
+	const { posts, error, loading } = useFetch('https://jsonplaceholder.typicode.com/posts');
 
-	useEffect(() => {
-		fetchPosts();
-	}, []);
-
-	const openEditModal = (e) => {
-		e.preventDefault();
-		setEdit(!edit);
-	};
-
-	const handleDeletePost = (id) => {
-		dispatch(deletePost(id));
-		setTimeout(() => {
-			window.location.reload();
-		}, 1000);
-	};
+	if (loading) return <p> Loading... </p>;
+	if (error) return <p> Error :( </p>;
 
 	return (
-		<div>
-			{posts &&
-				posts.map((post, index) => (
-					<section key={post.id}>
-						<h3 className={classes['post-heading']}>
-							<span>{index + 1}: </span>
-							{post.title}
-						</h3>
-						<p className={classes['post-paragraph']}>{post.body}</p>
-
-						<button
-							className={classes['post-button']}
-							onClick={() =>
-								setEdit({
-									edit: !edit,
-									id: post.id
-								})}
-						>
-							Edit Post
-						</button>
-						<button className={classes['post-button-delete']} onClick={() => handleDeletePost(post.id)}>
-							Delete Post
-						</button>
-					</section>
-				))}
-
-			<EditPost isOpen={edit} onClose={openEditModal} />
+		<div className={classes['post']}>
+			{posts ? <Pagination data={posts} pageLimit={5} dataLimit={10} /> : <h2>No available posts...</h2>}
 		</div>
 	);
 };
 
-const mapStateToProps = ({ posts }) => {
-	const normalizePost = posts.posts.slice(0, 20);
-	return {
-		posts: normalizePost
-	};
-};
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		fetchPosts: () => dispatch(fetchPosts())
-	};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Posts);
+export default Posts;

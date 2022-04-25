@@ -1,0 +1,76 @@
+.single-post {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+}
+
+.post-heading {
+	text-transform: capitalize;
+	margin-bottom: 0;
+	font-size: 24px;
+}
+
+.post-paragraph {
+	margin-top: 0;
+	margin-bottom: 5px;
+	text-indent: 20px;
+	font-size: 20px;
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paginationItem {
+	background: #fff;
+	border: 2px solid #666;
+	padding: 10px 15px;
+	border-radius: 50%;
+	height: 45px;
+	width: 45px;
+	position: relative;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.paginationItem span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+	background: #fff;
+	border: none;
+	padding: 10px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.paginationItem.active {
+	border: 1px solid #888;
+	color: #888;
+	pointer-events: none;
+}
+
+.prev.disabled,
+.next.disabled {
+	pointer-events: none;
+	color: #999;
+}
+
+@media screen and (max-width: 768px) {
+	.post-heading {
+		font-size: 20px;
+	}
+
+	.post-paragraph {
+		text-indent: 20px;
+		font-size: 16px;
+	}
+}

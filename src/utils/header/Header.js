@@ -4,13 +4,7 @@ import classes from './Header.module.css';
 const Header = () => {
 	return (
 		<div className={classes['header']}>
-			<h1>React-Redux</h1>
-
-			<ul className={classes['headerLinks']}>
-				<li>home</li>
-				<li>posts</li>
-				<li>about</li>
-			</ul>
+			<h1>React Test</h1>
 		</div>
 	);
 };
