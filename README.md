@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# React-Redux
-My first react app with redux
+# lifebank-Interview
+LifeBank Technical test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -70,8 +69,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-=======
-# lifebank-Interview
-LifeBank Technical test
->>>>>>> 61723025deab7b112417ee33ff235bb72a0a4668
